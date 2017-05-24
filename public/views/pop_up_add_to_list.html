@@ -1,0 +1,14 @@
+<div class="modal-header">
+    <h3 class="modal-title">Add to Playlist</h3>
+</div>
+<div class="modal-body">
+    <ul class="list-group " ng-repeat="dpl in dialogPlaylists">
+        <li class="list-group-item" ng-click="addToList($index)">
+            {{dpl}}
+        </li>
+    </ul>
+</div>
+
+<div class="modal-footer">
+    <button class="btn btn-cancel" ng-click="cancel()">Cancel</button>
+</div>

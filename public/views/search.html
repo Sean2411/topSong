@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-2">
+                <select class="form-control" name="typeSelector" id="typeSelector" ng-model="typeSelector">
+                    <option value="">Select Search Type</option>
+                    <option value="track">Artist</option>
+                    <option value="track">Title</option>
+                    <option value="track">Album</option>
+                </select>
+            </div>
+            <div class="col-md-10">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="ti-search"></i>
+                    </span>
+                    <input ng-model="searchContent" name="search" type="text" id="search" class="form-control" placeholder="Please enter an artist name or a album name" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="getMusic()">
+                            SEARCH
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h3>{{err}}</h3>
+    </div>
+
+    <div ng-repeat="result in searchResult">
+        <!--{{result}}-->
+
+        <div class="row list-group result-list">
+            <div class="col-md-1">
+                <img class="img-responsive" ng-src="{{result.album.images[2].url}}">
+            </div>
+            <div class="col-md-3">
+                <p>{{result.name}}</p>
+            </div>
+            <div class="col-md-3">
+                <p>{{result.album.name}}</p>
+            </div>
+            <div class="col-md-3">
+                <span ng-repeat="artist in result.artists"> {{artist.name}}</span>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-primary" ng-click="openDialog($index)">Add to Playlist</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+

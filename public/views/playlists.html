@@ -1,0 +1,28 @@
+<!--title-->
+<div class="row table-bordered playlist">
+    <div class="col-md-11 col-sm-10 col-xs-8">
+        <h4 class="pull-left">My Playlists</h4>
+    </div>
+    <div class="col-md-1 col-sm-2 col-xs-4">
+        <button type="button" class="btn btn-primary  pull-right row" ng-click="createPL()">
+            <i class="ti-plus"></i>
+            <b>Create Playlist</b>
+        </button>
+    </div>
+</div>
+
+<!--content-->
+<div class="row table-bordered playlist" ng-repeat="pl in playlists">
+    <div class="col-md-11 col-sm-10 col-xs-8">
+        <a href="#/content/{{$index}}">
+            <h4 class="pull-left">{{pl}}</h4>
+        </a>
+    </div>
+    <div class="col-md-1 col-sm-2 col-xs-4">
+        <button class="btn btn-primary pull-right row" ng-click="deletePL($index)">
+            <i class="ti-minus"></i>
+            <b>Delete</b>
+        </button>
+    </div>
+</div>
+

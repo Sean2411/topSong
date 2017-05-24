@@ -1,0 +1,30 @@
+<div>
+
+</div>
+<div ng-repeat="result in queryResult">
+    <!--{{result}}-->
+
+    <div class="row list-group result-list">
+        <div class="col-md-1">
+            <img class="img-responsive" ng-src="{{result.customImage}}">
+        </div>
+        <div class="col-md-3">
+            <p>{{result.track}}</p>
+        </div>
+        <div class="col-md-2">
+            <p>{{result.album}}</p>
+        </div>
+        <div class="col-md-2">
+            <p> {{result.artist}}</p>
+        </div>
+        <div class="col-md-2">
+            <p>{{result.note}}</p>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-primary" ng-click="">Edit</button>
+        </div>
+    </div>
+</div>
+<div>
+    <button class="btn btn-primary pull-right" ng-click="export()">Export</button>
+</div>
